@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="WARN" monitorInterval="600">
+
+    <Appenders>
+        <Console name="console_out_appender" target="SYSTEM_OUT">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT"
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss.SSS} (%F:%L) %m%n"/>
+        </Console>
+
+        <Console name="console_warn_appender" target="SYSTEM_ERR">
+            <ThresholdFilter level="WARN" onMatch="ACCEPT"
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss.SSS} (%F:%L) %m%n"/>
+        </Console>
+
+    </Appenders>
+
+    <Loggers>
+        <root level="trace">
+            <appender-ref ref="console_out_appender"/>
+            <appender-ref ref="console_warn_appender"/>
+        </root>
+
+        <logger name="org.springframework.core" level="info"/>
+        <logger name="org.springframework.beans" level="info"/>
+        <logger name="org.springframework.context" level="info"/>
+        <logger name="org.springframework.web" level="info"/>
+    </Loggers>
+
+</Configuration>

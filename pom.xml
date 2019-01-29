@@ -6,9 +6,14 @@
 
     <groupId>com.draper.Tuscany</groupId>
     <artifactId>Tuscany</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-
-
+    <modules>
+        <module>Tuscany-core</module>
+        <module>Tuscany-service</module>
+        <module>Tuscany-service-second</module>
+        <module>Tuscany-web</module>
+    </modules>
 
 </project>

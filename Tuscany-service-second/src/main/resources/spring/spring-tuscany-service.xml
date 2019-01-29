@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.draper.tuscany_service_second.impl.UserServiceImpl" id="userService"/>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="service" ref="userService"/>
+        <property name="serviceName" value="UserService"/>
+        <property name="serviceInterface" value="com.draper.tuscany_core.service.UserService"/>
+        <property name="registryPort" value="9091"/>
+    </bean>
+
+</beans>
